@@ -1,0 +1,206 @@
+background(color(201,147,22));
+size(500,500);
+
+int skincolor = color(228,200,145);
+int shadowcolor = color(189,160,101);
+int gold = color(255,240,230);
+
+
+
+//neck
+fill(color(228,200,145));
+stroke(color(228,200,145));
+rect(178,375,150,130);
+
+//neck shadow
+fill(color(189,160,101));
+stroke(color(189,160,101));
+arc (252,365,165,200,radians(0), radians(180));
+
+//head
+fill(color(228,200,145));
+stroke(color(228,200,145));
+ellipse(width/2, height/2, 300, 350);
+
+//left eyebrow
+fill(0);
+arc(180,190,90,50,radians(180), radians(360));
+
+//left eyebrow arch
+fill(color(skincolor));
+stroke((skincolor));
+arc(180,200,90,50,radians(180), radians(360));
+
+//right eyebrow
+fill(0);
+arc(330,190,90,50,radians(180), radians(360));
+
+//right eyebrow arch
+fill(color(skincolor));
+stroke((skincolor));
+arc(330,200,90,50,radians(180), radians(360));
+
+fill(0);
+stroke(0);
+ellipse(100, 190, 100,100);
+
+//glasses
+
+//left lense
+fill (skincolor);
+stroke(gold);
+strokeWeight (2);
+arc(185,200,90,150,radians(0), radians(180));
+
+fill(0);
+stroke(0);
+ellipse(400, 190, 100,100);
+
+
+//right lense
+fill (skincolor);
+stroke(gold);
+strokeWeight (2);
+arc(315,200,90,150,radians(0), radians(180));
+
+// left eye
+fill(255);
+stroke(255);
+ellipse(185, 225, 50,50);
+
+//right eye
+fill(255);
+stroke(255);
+ellipse(315, 225, 50,50);
+
+//right pupil
+fill(0);
+stroke(0);
+ellipse(315, 225, 30,30);
+
+//left pupil
+fill(0);
+stroke(0);
+ellipse(185, 225, 30,30);
+
+//nose shadow
+fill(color(189,160,101));
+stroke(color(189,160,101));
+triangle(235,300,250,310,265,300);
+
+//nose
+fill(color(skincolor));
+stroke(color(shadowcolor));
+triangle(235,300,250,250,265,300);
+
+//mouth
+fill(color(206,120,100));
+stroke (color(206,120,100));
+arc(width/2,325,100,75,radians(0), radians(180));
+
+
+
+
+
+
+
+
+
+//hair
+
+fill(0);
+stroke(0);
+ellipse(130, 100, 100,100);
+
+fill(0);
+stroke(0);
+ellipse(170, 120, 100,100);
+
+fill(0);
+stroke(0);
+ellipse(220, 110, 100,100);
+
+fill(0);
+stroke(0);
+ellipse(270, 80, 100,100);
+
+fill(0);
+stroke(0);
+ellipse(330, 80, 100,100);
+
+fill(0);
+stroke(0);
+ellipse(220, 110, 100,100);
+
+
+fill(0);
+stroke(0);
+ellipse(130, 150, 100,100);
+
+
+
+fill(0);
+stroke(0);
+ellipse(70, 250, 100,100);
+
+fill(0);
+stroke(0);
+ellipse(60, 300, 100,100);
+
+fill(0);
+stroke(0);
+ellipse(100, 300, 100,100);
+
+fill(0);
+stroke(0);
+ellipse(50, 370, 100,100);
+
+fill(0);
+stroke(0);
+ellipse(130, 370, 100,100);
+
+
+//right side
+
+fill(0);
+stroke(0);
+ellipse(350, 120, 100,100);
+
+fill(0);
+stroke(0);
+ellipse(400, 150, 100,100);
+
+
+
+fill(0);
+stroke(0);
+ellipse(420, 250, 100,100);
+
+fill(0);
+stroke(0);
+ellipse(420, 300, 100,100);
+
+fill(0);
+stroke(0);
+ellipse(450, 300, 100,100);
+
+fill(0);
+stroke(0);
+ellipse(400, 370, 100,100);
+
+fill(0);
+stroke(0);
+ellipse(490, 370, 100,100);
+
+//left top line
+stroke(gold);
+line (140, 200, 230, 200);
+
+//right top line
+stroke(gold);
+line (270, 200, 360, 200);
+
+//middle  line
+stroke(gold);
+line (230, 210, 270, 210);
+
