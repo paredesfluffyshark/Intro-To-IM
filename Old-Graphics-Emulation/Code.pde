@@ -4,14 +4,16 @@ background(255);
 int ylimit1 = 10;
 int ylimit2 = 490;
 println("ylimit1 " + ylimit1);
-// making "canvases"
+
+// making "canvases" or rectangles
 for (int canvasesprinted = 0; canvasesprinted <= 2; canvasesprinted = canvasesprinted + 1) {
   println("canvasesprinted " + canvasesprinted);
   int xlimit1 = 12 + ((250*canvasesprinted) + (15*canvasesprinted));
   println("xlimit1 " + xlimit1);
   int xlimit2 = 260 + ((250*canvasesprinted)+ (12*canvasesprinted));
   println("xlimit2 " + xlimit2);
-  // filling first
+
+  // setting the number of squares, triangles and cirlces per "canvas"
   float numberofsquaresfloat = (random(2, 5));
   int numberofsquares = int(numberofsquaresfloat);
   println("squares " + numberofsquares);
@@ -24,6 +26,7 @@ for (int canvasesprinted = 0; canvasesprinted <= 2; canvasesprinted = canvasespr
   int numberoftriangles = int(numberoftrianglesfloat);
   println("triangles " + numberoftriangles);
 
+  // filling with squares
   for (int square = 0; square <= numberofsquares; ) {
     float xvalue = random(xlimit1, xlimit2);
     float yvalue = random(ylimit1, ylimit2);
@@ -38,7 +41,7 @@ for (int canvasesprinted = 0; canvasesprinted <= 2; canvasesprinted = canvasespr
       }
     }
   }
-  // filling second canvas with triangles
+  // filling with triangles
   for (int triangle = 0; triangle <= numberoftriangles; triangle = triangle + 1) {
     float xvalue1 = random(xlimit1, xlimit2);
     float yvalue1 = random(ylimit1, ylimit2);
@@ -76,10 +79,7 @@ for (int canvasesprinted = 0; canvasesprinted <= 2; canvasesprinted = canvasespr
     }
   }
 
-
-
-
-
+  // creating the "canvases"
   for (int rectangle = 0; rectangle < 3; rectangle = rectangle +1) {
     stroke (0);
     noFill();
