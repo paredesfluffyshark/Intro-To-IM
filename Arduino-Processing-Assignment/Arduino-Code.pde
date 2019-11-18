@@ -59,4 +59,5 @@ void loop() {
     digitalWrite(LEDYELLOW, LOW);
     State = 'N';
   }
+  Serial.print(State); // sends the "State" character to processing
 }
