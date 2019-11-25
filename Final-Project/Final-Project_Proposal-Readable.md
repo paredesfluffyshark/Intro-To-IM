@@ -9,7 +9,7 @@ the tail will stop wagging and it will start growling. For this I will use a lig
 for the wiring more aesthetically similar to a dog. 
 
 **Rough Sketch**
-![](Final-Project/rough-sketch.jpg)
+![]Final-Project/rough-sketch.jpg
 
 **Arduino Program**
 
@@ -24,7 +24,7 @@ see when a certain command is clicked to do the trick (play dead, beg and speak)
 And by default, the dog should be barking. 
 
 **Block Diagram**
-![](Final-Project/block-diagram.jpg)
+![]Final-Project/block-diagram.jpg
 
 **Technical Requirements**
 * Learn how to display audio from processing
