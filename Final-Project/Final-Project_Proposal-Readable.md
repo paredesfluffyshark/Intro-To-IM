@@ -31,13 +31,7 @@ And by default, the dog should be barking.
 * Learn the mouse click function and make graphics
 
 **Equipment Requirements**
-
-*Servo motor
-*2 light sensors
-*Yellow LED
-*Red LED
-*Laptop
-*Faux fur or yarn (gray, black and brown)
+* Faux fur or just yarn (gray,black and brown)
 
 **Areas of Greatest Concern**
 
