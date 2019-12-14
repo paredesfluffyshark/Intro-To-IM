@@ -21,9 +21,13 @@
 **Problems and Solutions **
 
 **Arduino Code**
+```
+
+```
 
 **Processing Code**
 
+```
 // allows audio to be played from processing
 import processing.sound.*;
 //copied from the example sketch in Arduino: SerialCallResponse by Tom Igoe
@@ -173,6 +177,7 @@ void draw() {
     nope = 0;
   }
 }
+```
 
 
 
