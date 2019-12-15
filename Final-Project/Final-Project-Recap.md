@@ -1,6 +1,8 @@
 **Concept and Description**
 
   Building on my dog for my midterm, I created a virtual dog that you can interact with. It senses when there is a person and barks, wags its tail faster and starts panting when you pet it and does tricks. It can threten (play growling noise), beg (play whining noise) and play dead (stop the automatic barking). The user can interact with hovering the mouse on the commands on my laptop. The dog is made completely out of cardboard, tape and glue gun with cotton balls used for its fur. 
+  
+**Overall Documentation**
 
 **System Diagram of Hardware and Software**
  
@@ -16,7 +18,11 @@
 
 **How it Works**
 
+The first step is getting sensed by the distance sensor. Once something is within range, the LEDs turn on and the character "B" to processing and it plays the bark audio. Once the light sensor senses a threshold lower than 800, and there is someone sensed then the servo turned on, the lEDs turn off and the character "P" is sent which triggers the "panting" audio to be played. Once a person is sensed then the tricks can be triggered, these commands override the panting and barking audio from play and play either the whining (beg) audio, the growing audio (threaten) or just stop the barking audio from playing (play dead). If no one is sensed, then the dog does not react and all the parts are off. 
+
 **How it was Built**
+
+I first created the code. I built up on my arduino code and added features that I wanted (removing the tone playing, the blinking of the eyes and adding the method of communicating between arduino and processing). After this I started with building the circuits. I first made sure the distance sensor was working, then the light sensor and then tested them with the servo motor. Once this was working I added the LED. After I made sure the circuit was working with the arduino code then I made the processing code. After I made sure the audio loops worked (bark and pant when a certain character was sensed) then I started to code the tricks. I made sure the audio required played when the mouse is hovered over the command. Once both the processing code and arduino code were working, I worked on making them communicate. When that worked I finally began building the dog itself. After making sure the code worked the same after attaching it to the dog structure, I worked out the bugs, stuck the circuit on and sealed the dog. 
 
 **Problems and Solutions **
 
@@ -24,6 +30,16 @@
   The distance sensor I used was not the best, I'm wondering if I would've had less bugs if I used the IR sensors rather than this distance sensor. The issue was that it wasn't very accurate and would often get wild readings out of the blue, causing the LEDs to flicker or the servo motor to tunr on for a split second. As a result the dog looked very glichy. To solve this, I limited the times when the servo motor would be called and created a "for-loop" to average out valid readings and use those instead. 
   
 * Hardware
+
+It took a LOT of time to create the structure of the dog. Covering the whole dog in cotton took many hours but made the interaction with Max 2.0 much more interesting and memorable. 
+
+
+**Learnings From User Testing**
+
+1.  I realized is that it wasn't instuitive for for users to cover the light sensor when they saw the dog. The first thing they did was try to pet any part of the dog that wa closest to them, which obviously wouldn't do anything because there were no sensors. I made the sensor more visible and created a little heart to frame it so that it was more obvious that you would pet the dog there. 
+
+2. It wasn't intuitive to step in front of the dog. I created a poster that came with the dog indicative that Max 2.o (the project) had to see the person in order to react. This made more people stand in front of the dog rather than just randomly petting it. 
+
   
 **Arduino Code**
 ```
