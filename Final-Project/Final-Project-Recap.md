@@ -20,8 +20,103 @@
 
 **Problems and Solutions **
 
+* Distance sensor
+  The distance sensor I used was not the best, I'm wondering if I would've had less bugs if I used the IR sensors rather than this distance sensor. The issue was that it wasn't very accurate and would often get wild readings out of the blue, causing the LEDs to flicker or the servo motor to tunr on for a split second. As a result the dog looked very glichy. To solve this, I limited the times when the servo motor would be called and created a "for-loop" to average out valid readings and use those instead. 
+  
+* Hardware
+  
 **Arduino Code**
 ```
+// includes a seperate file for the sweeper function
+#include "sweeper.h"
+const int LEDYELLOW = 5;// initializes pin for LED
+const int LEDYELLOW2 = 6;// initializes pin for LED
+const int trigPin = 9;// initializes pin for distance sensor
+const int echoPin = 10; // initializes pin for distance sensor
+const int lightsensor = A0; // initializes pin for Light sensor
+char charState = 'N'; // initializes the variable that is sent to the Arduino in order to communicate to Processing what is going on on the bread board
+int distanceCount = 0; // sets distsanceCount for averaging distance readings
+int distanceTotal = 0;// sets distsanceTotal for averaging distance readings
+int nothing = 0; // null
+int ledState = LOW; // initializes LED state as LOW/OFF
+unsigned long previousMillis = 0; // initializes millis
+const long interval = 1000; // initializes intercal
+long duration;
+int distanceCm, distanceInch;
+Sweeper sweeper1(15); // initializes object type
+
+
+void setup() {
+
+  sweeper1.Attach(7); // attatches servo motor to pin #7
+  Serial.begin (9600); // establishes speed of communication
+  //sets pins to arduino
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  pinMode(LEDYELLOW, OUTPUT);
+  pinMode(LEDYELLOW2, OUTPUT);
+  pinMode(lightsensor, INPUT);
+  pinMode(LEDYELLOWA, OUTPUT);
+  pinMode(LEDYELLOWA2, OUTPUT);
+
+}
+
+void loop() {
+  //sets us the light sensor as Lsensor
+  int Lsensor = analogRead(lightsensor);
+
+  //sets digital sensor pins
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  duration = pulseIn(echoPin, HIGH);
+  distanceCm = duration * 0.034 / 2; // distance measure in centimeters
+
+
+  if ((distanceCm > 2) && (distanceCm <= 400)) { // makes sure readings are within a valid range
+    distanceTotal = 0;
+    //loop takes in 10 valid readings and finds the avergage
+    for (distanceCount = 0; distanceCount < 10;) {
+      distanceTotal = (distanceTotal + distanceCm);
+      distanceCount = distanceCount + 1;
+    }
+
+    distanceCm = (distanceTotal / 10); // sets new averagesd distance reading
+    if (distanceCm < 120) { // if something is sensed withint 120cm
+      if (Lsensor < 800) {// if the dog is being "pet" (light sensor is covered)
+        //increase increment (wagging of tail)
+        charState = 'P'; // P = Panting; panting sound and faster wagging of tail
+        // increases speed of tail waggin
+        sweeper1.Attach(7);
+        sweeper1.Increase();
+        sweeper1.Update();
+        unsigned long currentMillis = millis();
+        // turns off LEDs
+        digitalWrite(LEDYELLOW, LOW);
+        digitalWrite(LEDYELLOW2, LOW);
+
+      } else {
+        charState = 'B'; // B = barking, but no happy wagging of tail (will alternate between barking and painting)
+        unsigned long currentMillis = millis();
+        // turns on LEDs
+        digitalWrite(LEDYELLOW, HIGH);
+        digitalWrite(LEDYELLOW2, HIGH);
+      }
+
+    } else {
+      // if nothing is sensed within the valid range, all items will turn off
+      sweeper1.Detach();
+      digitalWrite(LEDYELLOW, LOW);
+      digitalWrite(LEDYELLOW2, LOW);
+      charState = 'N';
+    }
+    Serial.print(charState); //sends character state to processing as inByte
+    delay(20);
+  }
+}
 
 ```
 
