@@ -4,12 +4,16 @@
   
 **Overall Documentation**
 
+![sketch](https://user-images.githubusercontent.com/50195134/70866516-28ddf380-1f84-11ea-9161-6d2c7c973f92.jpeg)
+
 **System Diagram of Hardware and Software**
- 
 
-**Block Diagram**
-
-
+![20191212_202024_Original](https://user-images.githubusercontent.com/50195134/70866534-617dcd00-1f84-11ea-94e2-cc654a9f2e41.jpg)
+![20191212_202040_Original 2](https://user-images.githubusercontent.com/50195134/70866535-617dcd00-1f84-11ea-9f55-8a18ee2af865.jpg)
+![20191212_202027_Original](https://user-images.githubusercontent.com/50195134/70866536-617dcd00-1f84-11ea-8ff5-a88a968d6d20.jpg)
+![20191212_202037_Original](https://user-images.githubusercontent.com/50195134/70866537-62166380-1f84-11ea-9ac3-f4b67c56d60d.jpg)
+![20191212_202011_Original](https://user-images.githubusercontent.com/50195134/70866538-62166380-1f84-11ea-8853-599ef5e225e9.jpg)
+![20191212_202040_Original](https://user-images.githubusercontent.com/50195134/70866539-62aefa00-1f84-11ea-94cb-6f11d151291a.jpg)
 
 **Equipment Requirements**
 * Distance sensor
